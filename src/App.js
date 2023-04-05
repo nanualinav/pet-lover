@@ -12,8 +12,8 @@ function App() {
       <Route>
         <Navigation />
       </Route>
-      <Route>
-        <HomePage path="/:param?" />
+      <Route path="/:type?">
+        <HomePage />
       </Route>
     </Router>
   );
