@@ -4,7 +4,7 @@ import PetDetailsPage from './pages/detail';
 import PetDetailsNotFound from './pages/petDetailsNotFound';
 import Navigation from './components/navigation';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
@@ -12,9 +12,14 @@ function App() {
       <Route>
         <Navigation />
       </Route>
-      <Route path="/:type?">
-        <HomePage />
-      </Route>
+      <Switch>
+        <Route path="/:type/:id">
+          <PetDetailsPage />
+        </Route>
+        <Route path="/:type?">
+          <HomePage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
